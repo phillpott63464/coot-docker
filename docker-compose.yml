@@ -1,0 +1,16 @@
+services:
+  coot:
+    build: 
+      context: .
+      network: host
+    #image: coot
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./coot-data:/opt/DATA
+    network_mode: host
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+
